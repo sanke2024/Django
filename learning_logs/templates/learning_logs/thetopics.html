@@ -1,0 +1,21 @@
+{% extends "learning_logs/base.html" %}
+{%block content %}
+<p>
+    {{topic}}
+
+</p>
+
+<p>
+    Entries:-
+</p>
+{% for entry in entries %}
+<li>
+
+    {{entry.text}}
+    <a href="{% url 'learning_logs:edit_entry' entry.id %}">edit entry</a>
+</li>
+{% empty %}
+<p>no notes in this categry</p>
+{% endfor %}
+<p><a href="{% url 'learning_logs:new_entry' topic.id %}">add an entry</a></p>
+{% endblock content %}
