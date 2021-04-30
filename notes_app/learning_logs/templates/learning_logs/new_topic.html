@@ -1,17 +1,21 @@
 {% extends "learning_logs/base.html" %}
+{% load bootstrap3 %}
+{% block header %}
+<h2>Add a new topic-</h2>
+{% endblock header %}
 {% block content %}
-<p>add a new topic:</p>
 
-<form action="{% url 'learning_logs:new_topic' %}" method='post'>
+
+<form action="{% url 'learning_logs:new_topic' %}" method='post' class="form">
     <!-- we have already defined in view what happens on this url with post request -->
 
 
     {% csrf_token %}
 
-    {{ form }}
-
-    <button name="submit">add topic</button>
-
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button name="submit" class="btn btn-primary">add topic</button>
+    {% endbuttons %}
 
 
 </form>

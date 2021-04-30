@@ -1,6 +1,22 @@
 {% extends "learning_logs/base.html" %}
 <!-- yahan learning_logs directory hai namespace nahin -->
+{% block header %}
+<div class='jumbotron text-center'>
+    <h1>Make better notes.</h1>
+</div>
+{% endblock header %}
 {%block content%}
-    <p>i am part of index not base, above me is base</p>
-    
+<div class=' text-center'>
+<h2>
+
+    <a href="{% url 'users:register' %}">Register</a>
+</h2>
+<p>or</p>
+<h2>
+    <a href="{% url 'users:login' %}">Login</a>
+
+</h2>
+</div>
+
+
 {%endblock content%}

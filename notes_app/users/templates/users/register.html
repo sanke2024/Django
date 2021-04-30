@@ -1,0 +1,15 @@
+{% extends "learning_logs/base.html" %}
+{% block content %}
+
+<form action="{% url 'users:register' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Register</button>
+
+
+    <!-- #we include a hidden form element, 'next'; the value argument tells
+    Django where to redirect the user after they’ve registed in successfully. In
+    this case, we send the user back to the home page -->
+    <!-- <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" /> -->
+</form>
+{% endblock content %}
